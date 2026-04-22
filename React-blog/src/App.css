@@ -1,0 +1,51 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar container */
+div {
+  background-color: #0f172a; /* dark navy */
+  padding: 15px 30px;
+}
+
+/* UL styling */
+ul {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
+}
+
+/* Link styling */
+ul a {
+  text-decoration: none;
+  color: #f1f5f9; /* light text */
+  font-size: 18px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Hover effect */
+ul a:hover {
+  color: #38bdf8; /* sky blue */
+}
+
+/* Underline animation */
+ul a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background-color: #38bdf8;
+  transition: 0.3s;
+}
+
+ul a:hover::after {
+  width: 100%;
+}
