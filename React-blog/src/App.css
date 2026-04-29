@@ -1,4 +1,4 @@
-/* Reset default styles */
+\/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -6,46 +6,71 @@
 }
 
 /* Navbar container */
-div {
-  background-color: #0f172a; /* dark navy */
-  padding: 15px 30px;
-}
-
-/* UL styling */
-ul {
+.navbar {
+  background: linear-gradient(90deg, #0f172a, #1e293b);
+  padding: 16px 40px;
   display: flex;
   justify-content: center;
-  gap: 30px;
-  list-style: none;
+  gap: 35px;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Link styling */
-ul a {
+/* Links */
+.navbar a {
+  color: #e2e8f0;
   text-decoration: none;
-  color: #f1f5f9; /* light text */
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 500;
-  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
   position: relative;
+  transition: all 0.3s ease;
+}
+
+.navbar ul{
+  display: flex;
+  gap: 38px;
 }
 
 /* Hover effect */
-ul a:hover {
-  color: #38bdf8; /* sky blue */
+.navbar a:hover {
+  color: #38bdf8;
 }
 
 /* Underline animation */
-ul a::after {
+.navbar a::after {
   content: "";
   position: absolute;
+  left: 0;
+  bottom: -6px;
   width: 0%;
   height: 2px;
-  left: 0;
-  bottom: -5px;
   background-color: #38bdf8;
-  transition: 0.3s;
+  transition: width 0.3s ease;
 }
 
-ul a:hover::after {
+.navbar a:hover::after {
   width: 100%;
+}
+
+/* Active link (if using NavLink) */
+.active {
+  color: #38bdf8;
+}
+
+.active::after {
+  width: 100%;
+}
+
+/* Responsive (mobile) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 12px 20px;
+  }
+
+  .navbar a {
+    font-size: 15px;
+  }
 }
